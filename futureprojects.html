@@ -1,4 +1,12 @@
-{% include "header.html" %}
+<!-- {% include "header.html" %} -->
+
+<div id="header-container"></div>
+
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('header-container').innerHTML = html);
+</script>
 
 <header
   class="masthead"
