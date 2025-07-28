@@ -38,52 +38,104 @@
 
 {% include "footer.html" %} -->
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me</title>
-  <link rel="stylesheet" href="../static/assets/css/styles.css" />
+  <title>About Me – Ali Can Ispir</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="static/css/main.css" />
+  <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="is-preload">
 
-<header class="masthead" style="background-image: url('../static/assets/img/about-bg.jpg')">
-  <div class="container position-relative px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-md-10 col-lg-8 col-xl-7">
-        <div class="page-heading">
-          <h1>About My Future Projects</h1>
-          <span class="subheading">What I plan to do with Python</span>
-        </div>
-      </div>
-    </div>
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro">
+    <h1>About Me</h1>
+    <p>Welcome! I'm Ali Can Ispir, a mechanical engineer and simulation specialist integrating AI into engineering workflows.</p>
   </div>
-</header>
 
-<main class="mb-4">
-  <div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-md-10 col-lg-8 col-xl-7">
-        <p>Hello! I'm Ali Can Ispir, a mechanical engineer and simulation expert with a passion for combining physics-based modeling with artificial intelligence. I enjoy working on practical projects where I can design, build, and optimize systems that make life easier or more efficient.</p>
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="futureprojects.html">About</a></li>
+      <li><a href="hobbies.html">Publications</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="https://www.linkedin.com/in/ali-can-ispir-ph-d-b726a49b/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="https://github.com/alicanispir" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
 
-        <p>In the coming months, I plan to build a personal productivity web app using Python, featuring time tracking, Pomodoro timers, and Kanban-style task boards. My goal is to help users manage their workload more efficiently using a lightweight, user-friendly interface.</p>
+  <!-- Main -->
+  <div id="main">
+    <section class="post">
+      <header class="major">
+        <h2>Future Projects with Python</h2>
+        <p>What I plan to build next</p>
+      </header>
 
-        <p>I'm also interested in developing a stock market prediction app using machine learning. This project will focus on using historical data and regression models to forecast short-term market behavior—just for educational purposes and portfolio exploration.</p>
+      <p>Hello! I'm Ali Can Ispir, a mechanical engineer and simulation expert with a passion for combining physics-based modeling with artificial intelligence. I enjoy building practical tools that solve real-world problems—especially those that make work and learning more efficient and intelligent.</p>
 
-        <img src="static/images/kanban.png" alt="Kanban Board" width="400" height="300" />
-        <img src="static/images/stock.png" alt="Stock Market App" width="400" height="400" />
-      </div>
-    </div>
+      <p>One of my upcoming projects is a productivity-focused web app featuring Kanban boards, Pomodoro timers, and time tracking. Built with Python, it’s designed to help users stay organized and maximize their focus during work or study sessions.</p>
+
+      <p>Another project I'm excited about is a stock market forecasting app that uses machine learning to analyze trends and make short-term predictions. This project will let me combine data science with dynamic system modeling, one of my main areas of expertise.</p>
+
+      <span class="image fit"><img src="static/images/kanban.png" alt="Kanban Board Screenshot" /></span>
+      <span class="image fit"><img src="static/images/stock.png" alt="Stock Prediction App" /></span>
+    </section>
   </div>
-</main>
 
-<footer>
-  <div class="container text-center">
-    <p>&copy; 2025 Ali Can Ispir. All rights reserved.</p>
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="split contact">
+      <section class="alt">
+        <h3>Address</h3>
+        <p>Av. Emile Max 55, 1030 Schaerbeek<br />
+          Brussels, BELGIUM</p>
+      </section>
+      <section>
+        <h3>Phone</h3>
+        <p>+32 000000000</p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p>pythonlover@gmail.com</p>
+      </section>
+      <section>
+        <h3>Social</h3>
+        <ul class="icons alt">
+          <li><a href="https://x.com/?lang=en" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="https://www.facebook.com/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="https://github.com/alicanispir" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+      </section>
+    </section>
+  </footer>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    <ul><li>&copy; 2025 Ali Can Ispir. All rights reserved.</li></ul>
   </div>
-</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/jquery.scrollex.min.js"></script>
+<script src="static/assets/js/jquery.scrolly.min.js"></script>
+<script src="static/assets/js/browser.min.js"></script>
+<script src="static/assets/js/breakpoints.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
 
 </body>
 </html>
+
 
