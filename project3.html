@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Project – Digital Twin of a Plate-Tube Evaporator</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="static/css/main.css" />
+  <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro">
+    <h1>Digital Twin of a Plate-Tube Evaporator</h1>
+    <p>Modeling dynamic thermal behavior using CFD and machine learning</p>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="https://www.linkedin.com/in/ali-can-ispir-ph-d-b726a49b/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="https://github.com/alicanispir" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <section class="post">
+
+      <!-- Introduction -->
+      <header class="major">
+        <h2>Introduction</h2>
+      </header>
+      <p>
+        This project introduces a machine-learning framework to develop digital twins of evaporators—critical components in heat pump systems. A plate-tube evaporator using R134a refrigerant is modeled within a single-stage heat pump that recovers heat from wastewater.
+      </p>
+      <p>
+        The approach combines high-fidelity unsteady CFD simulations with nonlinear regression to capture transient heat transfer behavior. Five independent variables are considered: refrigerant and water inlet velocities and temperatures, and evaporation pressure. The model targets three key outputs: heat transfer coefficients on both fluid sides and the refrigerant outlet dryness fraction.
+      </p>
+      <p>
+        Training data is generated using Latin Hypercube Sampling across the input space, with each case solved using RANS equations coupled with the Volume of Fluid (VOF) method to capture phase change in the 3D domain. Gaussian Process Regression models are then trained on this dataset to create accurate, time-resolved surrogate models representing the system’s dynamic behavior.
+      </p>
+
+      <!-- Methodology -->
+      <header class="major">
+        <h2>Methodology</h2>
+      </header>
+      <p>Click on each step below to explore more details:</p>
+      <img src="static/images/workflow-main.png" usemap="#stepsMap" alt="Workflow Overview" class="image fit" />
+
+      <!-- Clickable Map -->
+      <map name="stepsMap">
+        <area shape="rect" coords="10,10,200,200" href="#step1" alt="Step 1" />
+        <area shape="rect" coords="210,10,400,200" href="#step2" alt="Step 2" />
+        <!-- Add more areas for other steps -->
+      </map>
+
+      <!-- Step Modals -->
+      <div id="step1" class="step-modal" style="display: none;">
+        <h3>Step 1 – Physical Model</h3>
+        <img src="static/images/step1-detail.png" alt="Step 1 Detail" class="image fit" />
+        <p>The physical model represents a plate-tube evaporator with R134a and water flow domains. Boundary conditions reflect realistic inlet and outlet conditions under varying operating scenarios.</p>
+      </div>
+
+      <div id="step2" class="step-modal" style="display: none;">
+        <h3>Step 2 – Data Sampling</h3>
+        <img src="static/images/step2-detail.png" alt="Step 2 Detail" class="image fit" />
+        <p>Latin Hypercube Sampling is used to span the design space efficiently, covering a wide range of inlet velocities, temperatures, and evaporation pressures for transient operation.</p>
+      </div>
+
+      <!-- Results -->
+      <header class="major">
+        <h2>Results</h2>
+      </header>
+      <p>Below is a sample result comparing the predicted and actual heat transfer coefficients and dryness fraction over time. The Gaussian Process Regression surrogate model shows excellent accuracy in replicating the CFD-based objective functions with low error.</p>
+      <img src="static/images/results-plot.png" alt="Results Visualization" class="image fit" />
+
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="split contact">
+      <section class="alt">
+        <h3>Address</h3>
+        <p>Dominee Theodor Fliednerstraat 2, 5631 BN<br />Eindhoven, Netherlands</p>
+      </section>
+      <section>
+        <h3>Phone</h3>
+        <p>+31 626019161</p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p>ispiralican@gmail.com</p>
+      </section>
+    </section>
+  </footer>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    <ul><li>&copy; 2025 Ali Can Ispir. All rights reserved.</li></ul>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/jquery.scrollex.min.js"></script>
+<script src="static/assets/js/jquery.scrolly.min.js"></script>
+<script src="static/assets/js/browser.min.js"></script>
+<script src="static/assets/js/breakpoints.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+<!-- Toggle Step Modal Interactivity -->
+<script>
+  document.querySelectorAll('area').forEach(area => {
+    area.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = area.getAttribute('href');
+      document.querySelectorAll('.step-modal').forEach(div => div.style.display = 'none');
+      document.querySelector(id).style.display = 'block';
+      window.scrollTo({
+        top: document.querySelector(id).offsetTop - 80,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
