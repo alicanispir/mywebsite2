@@ -62,15 +62,17 @@
 							<section class="posts">
 								<article>
 									<header>
-										<span class="date">January 12, 2023</span>
-										<h2><a href="https://en.wikipedia.org/wiki/Hangman_(game)">Day:7 Hangman</a></h2>
+										<span class="date">July, 2024</span>
+										<h2><a href="https://en.wikipedia.org/wiki/Hangman_(game)">Digital twin development of an R134a plate-tube evaporator</a></h2>
 									</header>
 									<a href="https://en.wikipedia.org/wiki/Hangman_(game)" class="image fit"><img src="static/images/hangman.jpg" alt="" /></a>
-									<p>The Hangman game is a classic word-guessing game. In this game, one player thinks
-										of a word, and the other player(s) try to guess it by suggesting letters one at
-										a time. The goal is to guess the word before the player is "hanged," which is
-										represented by a stick figure drawing that progressively appears with each
-										incorrect guess.</p>
+									<p>This project introduces a machine-learning framework to develop digital twins of evaporators—critical components in heat pump systems. 
+									A plate-tube evaporator using R134a refrigerant is modeled within a single-stage heat pump that recovers heat from wastewater. The approach combines 
+									high-fidelity unsteady CFD simulations with nonlinear regression to capture transient heat transfer behavior. Five independent variables are considered: 
+									refrigerant and water inlet velocities and temperatures, and evaporation pressure. The model targets three key outputs: heat transfer coefficients on both 
+									fluid sides and the refrigerant outlet dryness fraction. Training data is generated using Latin Hypercube Sampling across the input space, with each case solved 
+									using RANS equations coupled with the Volume of Fluid (VOF) method to capture phase change in the 3D domain. Gaussian Process Regression models are then trained 
+									on this dataset to create accurate, time-resolved surrogate models representing the system’s dynamic behavior.</p>
 <!--									<ul class="actions special">-->
 <!--										<li><a href="#" class="button">Full Story</a></li>-->
 <!--									</ul>-->
