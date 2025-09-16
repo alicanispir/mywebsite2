@@ -54,7 +54,11 @@
       <header class="major">
         <h2>Methodology</h2>
       </header>
-      <p>Click on each step below to explore more details:</p>
+      <p>
+          In system development, heat transfer processes in heat pump components are often represented by simplified governing equations, empirical correlations, or case-specific formulations, which limits their ability to capture detailed component-level physics. To overcome this limitation, we propose a digital twin framework that integrates high-fidelity simulation with machine learning (ML). The framework defines the operating space of the heat pump using Latin Hypercube Sampling across varying dynamic operating conditions (inlet properties of water and refrigerant), generates a dataset through detailed multi-phase CFD simulations, and extracts key parameters such as vapor fraction and refrigerant/water-side heat transfer coefficients at each time step. ML models are then trained on this dataset and embedded into the digital twin, enabling fast and accurate prediction of local heat transfer phenomena across the full operating space. This approach bridges the gap between traditional low-fidelity formulations and computationally expensive CFD, combining accuracy with computational efficiency.  
+      </p>
+      
+      
       <img src="static/images/methodology.png" usemap="#stepsMap" alt="Workflow Overview" class="image fit" />
 
       <!-- Image Map -->
@@ -72,7 +76,7 @@
         <h3>Step 1 – Physical Model</h3>
         <p>The physical model represents a plate-tube evaporator with R134a and water flow domains. Boundary conditions reflect realistic inlet and outlet conditions under varying operating scenarios.</p>
 <!--       </div> -->
-
+        <img src="static/images/evaporator.png" class="image fit" />
 <!--       <div id="step2" class="step-modal" style="display: none;"> -->
         <h3>Step 2 – Data Sampling</h3>
         <p>Latin Hypercube Sampling is used to span the design space efficiently, covering a wide range of inlet velocities, temperatures, and evaporation pressures for transient operation.</p>
@@ -86,7 +90,7 @@
 
 <!--       <div id="step4" class="step-modal" style="display: none;"> -->
         <h3>Step 4 – Data Reduction</h3>
-        <p>Details coming soon or add your image here...</p>
+        <p>Heat transfer coefficients in both the water and refrigerant domains, as well as the refrigerant vapor quality at the outlet, were calculated over a 20-second evaporator operation. A time step of 0.25 s was used, and the CFD database was reduced to include only the relevant input and output parameters, with the input parameters representing dynamically varying inlet conditions of the evaporator.</p>
 <!--       </div> -->
 
 <!--       <div id="step5" class="step-modal" style="display: none;"> -->
