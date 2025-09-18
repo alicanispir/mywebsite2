@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Project – ML-Based Digital Twin of Industrial Heat Pump</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="static/css/main.css" />
+  <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro">
+    <h1>ML-Based Digital Twin of Industrial Heat Pump</h1>
+    <p>Modeling steady-state behavior of an industrial heat pump using machine learning</p>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="https://www.linkedin.com/in/ali-can-ispir-ph-d-b726a49b/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="https://github.com/alicanispir" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <section class="post">
+
+      <!-- Introduction -->
+      <header class="major">
+        <h2>Introduction</h2>
+      </header>
+      <p>
+        This project introduces a machine-learning framework to develop digital twins of evaporators—critical components in heat pump systems. A plate-tube evaporator using R134a refrigerant is modeled within a single-stage heat pump that recovers heat from wastewater.
+      </p>
+      <p>
+        The approach combines high-fidelity unsteady CFD simulations with nonlinear regression to capture transient heat transfer behavior. Five independent variables are considered: refrigerant and water inlet velocities and temperatures, and evaporation pressure. The model targets three key outputs: heat transfer coefficients on both fluid sides and the refrigerant outlet dryness fraction.
+      </p>
+      <p>
+        Training data is generated using Latin Hypercube Sampling across the input space, with each case solved using RANS equations coupled with the Volume of Fluid (VOF) method to capture phase change in the 3D domain. Gaussian Process Regression models are then trained on this dataset to create accurate, time-resolved surrogate models representing the system’s dynamic behavior.
+      </p>
+
+      <p>
+        Use this <a href="https://asmedigitalcollection.asme.org/HT/proceedings-abstract/HT2024/87905/1205330">link</a> to access the publication.
+      </p>
+
+      <!-- Methodology -->
+      <header class="major">
+        <h2>Methodology</h2>
+      </header>
+      <p>
+          In system development, heat transfer processes in heat pump components are often represented by simplified governing equations, empirical correlations, or case-specific formulations, which limits their ability to capture detailed component-level physics. To overcome this limitation, we propose a digital twin framework that integrates high-fidelity simulation with machine learning (ML). The framework defines the operating space of the heat pump using Latin Hypercube Sampling across varying dynamic operating conditions (inlet properties of water and refrigerant), generates a dataset through detailed multi-phase CFD simulations, and extracts key parameters such as vapor fraction and refrigerant/water-side heat transfer coefficients at each time step. ML models are then trained on this dataset and embedded into the digital twin, enabling fast and accurate prediction of local heat transfer phenomena across the full operating space. This approach bridges the gap between traditional low-fidelity formulations and computationally expensive CFD, combining accuracy with computational efficiency.  
+      </p>
+      
+      
+      <img src="static/images/methodology.png" usemap="#stepsMap" alt="Workflow Overview" class="image fit" />
+
+      <!-- Image Map -->
+<!--       <map name="stepsMap">
+        <area shape="rect" coords="10,80,260,240" href="#step1" alt="Step 1" />
+        <area shape="rect" coords="400,80,620,240" href="#step2" alt="Step 2" />
+        <area shape="rect" coords="680,80,900,240" href="#step3" alt="Step 3" />
+        <area shape="rect" coords="680,270,900,430" href="#step4" alt="Step 4" />
+        <area shape="rect" coords="400,270,620,430" href="#step5" alt="Step 5" />
+        <area shape="rect" coords="40,270,260,430" href="#step6" alt="Step 6" />
+      </map> -->
+
+      <!-- Step Modals -->
+<!--       <div id="step1" class="step-modal" style="display: none;"> -->
+        <h3>Step 1 – Physical Model</h3>
+        <p>The physical model represents a plate-tube evaporator with R134a and water flow domains. Boundary conditions reflect realistic inlet and outlet conditions under varying operating scenarios.</p>
+<!--       </div> -->
+        <img src="static/images/evaporator.png" class="image fit" />
+<!--       <div id="step2" class="step-modal" style="display: none;"> -->
+        <h3>Step 2 – Data Sampling</h3>
+        <p>Latin Hypercube Sampling is used to span the design space efficiently, covering a wide range of inlet velocities, temperatures, and evaporation pressures for transient operation.</p>
+<!--       </div> -->
+
+<!--       <div id="step3" class="step-modal" style="display: none;"> -->
+        <h3>Step 3 – Data Generation</h3>
+        <img src="static/images/rom_3D_HTC_CFD.png" class="image fit" />
+        <p>The database was generated under varying input conditions using Ansys Fluent, by solving 3D unsteady RANS equations coupled with the Volume of Fluid (VOF) method.</p>
+<!--       </div> -->
+
+<!--       <div id="step4" class="step-modal" style="display: none;"> -->
+        <h3>Step 4 – Data Reduction</h3>
+        <p>Heat transfer coefficients in both the water and refrigerant domains, as well as the refrigerant vapor quality at the outlet, were calculated over a 20-second evaporator operation. A time step of 0.25 s was used, and the CFD database was reduced to include only the relevant input and output parameters, with the input parameters representing dynamically varying inlet conditions of the evaporator.</p>
+<!--       </div> -->
+
+<!--       <div id="step5" class="step-modal" style="display: none;"> -->
+        <h3>Step 5 – Data Regression</h3>
+        <p>Gaussian Process Regression was selected to find optimal pattern between input and output parameters for each time step of the system operation.</p>
+<!--       </div> -->
+
+<!--       <div id="step6" class="step-modal" style="display: none;"> -->
+        <h3>Step 6 – Digital Twin</h3>
+        <p>Each regression model represents digital twin i.e., surrogate models of the output parameters for a given time step of the operation.</p>
+<!--       </div> -->
+
+      <!-- Results -->
+      <header class="major">
+        <h2>Results</h2>
+      </header>
+      <p>
+        The heat transfer processes governing the dynamic operation of the evaporator were modeled using high-fidelity data combined with machine learning. Machine learning models were developed for key objective functions, such as the heat transfer coefficient and vapor dryness fraction, at selected time steps, as demonstrated below.
+      </p>
+      <img src="static/images/parity_plots.png" alt="Results Visualization" class="image fit" />
+
+      <p>
+        CFD results were also evaluated to understand the non-linearity of the database which was used for creating the digital twins. The temperature distribution of one of the sample was given below:
+      </p>
+
+      <video width="100%" controls>
+        <source src="static/images/temp_case20.mp4" type="video/mp4">
+      </video>
+    
+      
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="split contact">
+      <section class="alt">
+        <h3>Address</h3>
+        <p>Dominee Theodor Fliednerstraat 2, 5631 BN<br />Eindhoven, Netherlands</p>
+      </section>
+      <section>
+        <h3>Phone</h3>
+        <p>+31 626019161</p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p>ispiralican@gmail.com</p>
+      </section>
+    </section>
+  </footer>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    <ul><li>&copy; 2025 Ali Can Ispir. All rights reserved.</li></ul>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/jquery.scrollex.min.js"></script>
+<script src="static/assets/js/jquery.scrolly.min.js"></script>
+<script src="static/assets/js/browser.min.js"></script>
+<script src="static/assets/js/breakpoints.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+<!-- Modal Toggle Logic -->
+<script>
+  document.querySelectorAll('area').forEach(area => {
+    area.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      document.querySelectorAll('.step-modal').forEach(modal => {
+        modal.style.display = 'none';
+      });
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
