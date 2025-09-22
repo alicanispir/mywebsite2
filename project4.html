@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Project – ML-Based Digital Twin of Industrial Heat Pump</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="static/css/main.css" />
+  <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro">
+    <h1>ML-Based Digital Twin of Industrial Heat Pump</h1>
+    <p>Modeling steady-state behavior of an industrial heat pump using machine learning</p>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="https://www.linkedin.com/in/ali-can-ispir-ph-d-b726a49b/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="https://github.com/alicanispir" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <section class="post">
+
+      <!-- Introduction -->
+      <header class="major">
+        <h2>Introduction</h2>
+      </header>
+      <p>
+        Industrial heat pumps (HPs) are a sustainable alternative to fossil-fueled boilers for generating process heat, particularly when powered by renewable electricity. 
+        However, their adoption is slowed by limited understanding of HP performance under varying operating conditions, as traditional evaluation methods like experiments or high-fidelity simulations are costly and time-consuming.
+      </p>
+      <p>
+        This study presents a digital-twin framework that combines machine learning, specifically Gaussian Process Regression (GPR), with experimental data to model a 1 MWth industrial HP using n-Pentane as the working fluid. 
+        The system recovers waste heat from hot water to produce steam, with the model trained on 55 steady-state operating points from a state-of-the-art test facility. It accurately predicts component variables (pressures 
+        and temperatures) and system-level indicators such as COP and heating duty, with errors under 7% across varying conditions.
+      </p>
+      <p>
+        Beyond performance modeling, the digital twin enables economic and environmental assessments. Results show a payback period of 3.8–4.2 years, annual CO₂ savings of 250–1000 tons compared to a propane boiler, and energy savings 
+        exceeding 3000 MWh. The HP achieved a COP equal to 44% of the Carnot COP when operated at steam pressures of 1.9–2.4 bar.
+      </p>
+      <p>
+        Overall, this work demonstrates the potential of data-driven digital twins to improve the design, operation, and adoption of industrial HPs, offering a scalable framework to support the transition toward sustainable energy systems in industry.
+      </p>
+
+      <p>
+        Use this <a href="https://www.sciencedirect.com/science/article/pii/S1359431125005125?via%3Dihub">link</a> to access the publication.
+      </p>
+
+      <!-- Methodology -->
+      <header class="major">
+        <h2>Methodology</h2>
+      </header>
+      <p>
+          An industrial heat pump system having 1MW heating capacity was studied in this work. The experimental facility and schematic of the physical system are viewed in below:      </p>
+      
+      
+      <img src="static/images/FUSE_hp.png" usemap="#stepsMap" alt="Workflow Overview" class="image fit" />
+
+      <!-- Step Modals -->
+<!--       <div id="step1" class="step-modal" style="display: none;"> -->
+        <h3>Step 1 – Data Generation</h3>
+        <p>Fifty-five experimental measurements were performed by varying the system input parameters, and the time-domain data obtained served as the full-order model of the heat pump.</p>
+<!--       </div> -->
+
+<!--       <div id="step2" class="step-modal" style="display: none;"> -->
+        <h3>Step 2 – Data Reduction</h3>
+        <p>For each measurement, the time-series data was averaged after the system reached steady-state conditions. System state variables — such as pressure and temperature at component boundaries, 
+          along with performance parameters including compressor work and heating duty — were then reduced as functions of the independent parameters.</p>
+<!--       </div> -->
+        <img src="static/images/data_reduction.png" class="image fit" />
+
+        <h3>Step 5 – Data Regression</h3>
+        <p>A machine learning model was developed for each objective function, enabling performance estimation and flow variable monitoring at operating points not covered in the experimental work.</p>
+
+        <img src="static/images/data_regression.png" class="image fit" />
+
+        <img src="static/images/parity_plots.png" class="image fit" />
+      
+      <!-- Results -->
+      <header class="major">
+        <h3>Digital twin of the heat pump for performance estimation and system variable monitoring</h3>
+      </header>
+      <p>
+        The generated digital twin of the heat pump system enabled performance mapping across varying independent parameters and supported an economic assessment of its deployment as a replacement for a fossil-fueled boiler in industrial settings.
+      </p>
+      <img src="static/images/performance_maps.png" alt="Operating maps of the HP obtained by the digital twin: 2.4bar (left) and 3.5bar (right) steam pressures" class="image fit" />
+
+
+      <img src="static/images/energy_maps.png" alt="Economic assessment maps of the heat pump vs. a fossil-fueled boiler at 2.4 bar (left) and 3.5 bar (right) steam pressure." class="image fit" />
+
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="split contact">
+      <section class="alt">
+        <h3>Address</h3>
+        <p>Dominee Theodor Fliednerstraat 2, 5631 BN<br />Eindhoven, Netherlands</p>
+      </section>
+      <section>
+        <h3>Phone</h3>
+        <p>+31 626019161</p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p>ispiralican@gmail.com</p>
+      </section>
+    </section>
+  </footer>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    <ul><li>&copy; 2025 Ali Can Ispir. All rights reserved.</li></ul>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/jquery.scrollex.min.js"></script>
+<script src="static/assets/js/jquery.scrolly.min.js"></script>
+<script src="static/assets/js/browser.min.js"></script>
+<script src="static/assets/js/breakpoints.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+<!-- Modal Toggle Logic -->
+<script>
+  document.querySelectorAll('area').forEach(area => {
+    area.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      document.querySelectorAll('.step-modal').forEach(modal => {
+        modal.style.display = 'none';
+      });
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
