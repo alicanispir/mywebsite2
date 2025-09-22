@@ -41,24 +41,24 @@
         <h2>Introduction</h2>
       </header>
       <p>
-        Industrial heat pumps (HPs) are a sustainable alternative to fossil-fueled boilers for generating process heat, particularly when powered by renewable electricity. 
-        However, their adoption is slowed by limited understanding of HP performance under varying operating conditions, as traditional evaluation methods like experiments or high-fidelity simulations are costly and time-consuming.
+        Ramjet propulsion remains a key technology for high-speed flight, yet its design and optimization are challenging due to the complex flow physics involved. While many low-fidelity studies exist, most emphasize individual components 
+        such as intakes, combustors, or nozzles, rather than addressing the propulsion system as a whole. This limits the ability to capture the true performance trends across the complete flow path.
       </p>
       <p>
-        This study presents a digital-twin framework that combines machine learning, specifically Gaussian Process Regression (GPR), with experimental data to model a 1 MWth industrial HP using n-Pentane as the working fluid. 
-        The system recovers waste heat from hot water to produce steam, with the model trained on 55 steady-state operating points from a state-of-the-art test facility. It accurately predicts component variables (pressures 
-        and temperatures) and system-level indicators such as COP and heating duty, with errors under 7% across varying conditions.
+        In this work, we propose a holistic, low-fidelity methodology that integrates design and analysis approaches for all major ramjet components. By coupling intake, combustor, and nozzle design with varying flight conditions, 
+        we establish a cost-efficient framework to explore the ramjet design space. This allows for performance characterization that is both comprehensive and scalable.
       </p>
       <p>
-        Beyond performance modeling, the digital twin enables economic and environmental assessments. Results show a payback period of 3.8–4.2 years, annual CO₂ savings of 250–1000 tons compared to a propane boiler, and energy savings 
-        exceeding 3000 MWh. The HP achieved a COP equal to 44% of the Carnot COP when operated at steam pressures of 1.9–2.4 bar.
+        The methodology evaluates a wide range of design parameters, including intake wedge angle, exit Mach number, combustor length, fuel mass flow, fuel strut placement, and nozzle geometry, together with flight altitude and Mach number. 
+        This multi-dimensional matrix enables systematic assessment of engine performance under diverse operating scenarios.
       </p>
       <p>
-        Overall, this work demonstrates the potential of data-driven digital twins to improve the design, operation, and adoption of industrial HPs, offering a scalable framework to support the transition toward sustainable energy systems in industry.
+        To manage the complexity of this design space, we apply Shapley Additive Explanations (SHAP), a feature importance technique that quantifies the influence of each variable on propulsive performance. This provides clear insights into 
+        how flight and operational conditions drive engine behavior, supporting more informed design choices and optimization of ramjet propulsion systems.
       </p>
 
       <p>
-        Use this <a href="https://www.sciencedirect.com/science/article/pii/S1359431125005125?via%3Dihub">link</a> to access the publication.
+        Use this <a href="https://www.sciencedirect.com/science/article/pii/S1270963824009404">link</a> to access the publication.
       </p>
 
       <!-- Methodology -->
