@@ -74,7 +74,9 @@
       <!-- Step Modals -->
 <!--       <div id="step1" class="step-modal" style="display: none;"> -->
         <h3>Step 1 – Reduced-order model development for engine design</h3>
-        <p>Fifty-five experimental measurements were performed by varying the system input parameters, and the time-domain data obtained served as the full-order model of the heat pump.</p>
+        <p>The design tool (accessible via this link) was developed for ramjet/scramjet propulsion system design exercises and includes dedicated modules for the intake, combustor, and nozzle. For the intake, a Busemann design approach and related flow relations 
+          were implemented. The combustor and nozzle modules were modeled using one-dimensional ordinary differential equations (ODEs) coupled with detailed chemistry to analyze performance. Since the combustor is a constant-area duct, the flow accelerates to the 
+          sonic limit at the throat. This means that for every design scenario—defined by flight conditions and design parameters—there exists a unique fuel consumption (equivalence ratio) that achieves thermal choking at the throat.</p>
 <!--       </div> -->
 
 <!--       <div id="step2" class="step-modal" style="display: none;"> -->
@@ -84,11 +86,13 @@
 <!--       </div> -->
         <img src="static/images/data_reduction.png" class="image fit" />
 
-        <h3>Step 5 – Data Regression</h3>
+        <h3>Step 3 – Sensitivity Analysis with Shapley Additive Explanation</h3>
         <p>A machine learning model was developed for each objective function, enabling performance estimation and flow variable monitoring at operating points not covered in the experimental work.</p>
 
         <img src="static/images/data_regression.png" class="image fit" />
 
+        
+      
         <img src="static/images/parity_plots.png" class="image fit" />
       
       <!-- Results -->
